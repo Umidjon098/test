@@ -1,0 +1,8 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding:0 92px;
+    background: linear-gradient(58deg, rgba(241, 196, 15,1)20%,rgb(255, 255, 1)100%);
+}
