@@ -1,8 +1,30 @@
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    padding:0 92px;
-    background: linear-gradient(58deg, rgba(241, 196, 15,1)20%,rgb(255, 255, 1)100%);
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 92px;
+  background: linear-gradient(58deg, rgb(107, 163, 226), rgb(1, 81, 255));
+}
+.navbar-logo {
+  font-size: 28px;
+  color: aliceblue;
+}
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+}
+.navbar a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+.navbar a:hover {
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
 }

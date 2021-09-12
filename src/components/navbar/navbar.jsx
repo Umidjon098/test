@@ -1,30 +1,25 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './style/navbar.css'
-
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import "./style/navbar.css";
 
 class Navbar extends Component {
+  state = {};
 
-    state = {
-        click: false,
-    }
-
-    handleClick = () => {
-        this.setState({ click: !this.state.click })
-    }
-    render() {
-        const { click } = this.state;
-        return (
-            <nav className="navbar">
-                <Link to="#" className='navbar-logo'>
-                    Toyota
-                </Link>
-                <div className="menu-icon" onClick={this.handleClick}>
-                    <i className={click ? "fas fa-times" : "fas fa-bars"} />
-                </div>
-            </nav>
-        );
-    }
+  render() {
+    return (
+      <nav className="navbar">
+        <div className="navbar-logo">UMSoft</div>
+        <div className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/">About</Link>
+          <Link to="/">Products</Link>
+          <Link to="/">News</Link>
+          <Link to="/">Media</Link>
+          <Link to="/">Contacts</Link>
+        </div>
+      </nav>
+    );
+  }
 }
 
 export default Navbar;
