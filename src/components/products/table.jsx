@@ -13,6 +13,7 @@ class DataTable extends Component {
   }
   render() {
     const { List, searchTerm } = this.props;
+    console.log(localStorage.getItem("token"));
     return (
       <div className="container">
         <table className="table">
@@ -28,7 +29,7 @@ class DataTable extends Component {
             <tbody>
               {List.items === undefined ? (
                 <div>Loading...</div>
-              ) : this.List.items.length === 0 ? (
+              ) : List.items.length === 0 ? (
                 <div>Malumot mavjud emas!</div>
               ) : (
                 List.items
@@ -58,7 +59,7 @@ class DataTable extends Component {
             <tbody>
               {List.items === undefined ? (
                 <div>Loading...</div>
-              ) : this.List.items.length === 0 ? (
+              ) : List.items.length === 0 ? (
                 <div>Malumot mavjud emas!</div>
               ) : (
                 List.items
