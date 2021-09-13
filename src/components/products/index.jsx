@@ -41,7 +41,6 @@ class Products extends Component {
           List={this.state.List}
           searchTerm={this.state.searchTerm}
           getProducts={this.getProducts}
-          searchTerm={this.state.searchTerm}
         />
       </>
     );
