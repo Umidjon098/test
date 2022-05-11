@@ -8,7 +8,7 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="navbar">
-        <div className="navbar-logo">UMSoft</div>
+        <div className="navbar-logo">Your Logo</div>
         <div className="nav-links">
           <Link to="/">Home</Link>
           <Link to="/">About</Link>

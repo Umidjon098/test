@@ -4,6 +4,9 @@ import SearchBar from "./searchbar";
 import "../style/style.css";
 import DataTable from "./table";
 import axios from "axios";
+import { Company } from "../../api/main/company";
+import { getID } from "../../util";
+
 class Products extends Component {
   constructor(props) {
     super(props);
@@ -20,17 +23,14 @@ class Products extends Component {
     this.setState({ searchTerm: search });
   };
   getProducts = async (number = 1) => {
-    const url = "https://face.ox-sys.com/variations";
-    await axios(url, {
-      headers: {
-        Authorization: "Bearer " + localStorage.getItem("token"),
-      },
-      params: {
-        page: number,
-      },
-    }).then((response) => {
-      this.setState({ List: response.data });
-    });
+    const id = getID();
+    Company.getProduct(id, { page: number })
+      .then((res) => {
+        this.setState({ List: res });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   render() {
     return (

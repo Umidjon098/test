@@ -10,7 +10,7 @@
 }
 .login-form .fa-user,
 .login-form .fa-lock,
-.login-form .fa-shopping-cart {
+.login-form .fa-phone {
   position: absolute;
   top: 15px;
   left: 10px;
@@ -28,7 +28,7 @@
 .login-page {
   position: relative;
   width: 40%;
-  height: 80vh;
+  height: 560px;
   overflow: hidden;
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(68, 68, 68, 0.1);

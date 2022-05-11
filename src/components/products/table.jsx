@@ -14,6 +14,7 @@ class DataTable extends Component {
   }
   render() {
     const { List, searchTerm } = this.props;
+
     return (
       <div className="container">
         <table className="table">
@@ -21,8 +22,8 @@ class DataTable extends Component {
             <tr>
               <th scope="col">#</th>
               <th scope="col">Name</th>
-              <th scope="col">Supplier</th>
-              <th scope="col">Unit</th>
+              <th scope="col">Category</th>
+              <th scope="col">Description</th>
             </tr>
           </thead>
           {searchTerm === "" ? (
@@ -38,8 +39,8 @@ class DataTable extends Component {
                     <tr key={data.id}>
                       <th scope="row">{id}</th>
                       <td>{data.name}</td>
-                      <td>{data.supplier}</td>
-                      <td>{data.unit}</td>
+                      <td>{data.category?.name}</td>
+                      <td>{data.description}</td>
                     </tr>
                   );
                 })
@@ -80,11 +81,11 @@ class DataTable extends Component {
                   .map((data, id) => {
                     id++;
                     return (
-                      <tr key={data.id}>
+                      <tr key={id}>
                         <th scope="row">{id}</th>
                         <td>{data.name}</td>
-                        <td>{data.supplier}</td>
-                        <td>{data.unit}</td>
+                        <td>{data.category?.name}</td>
+                        <td>{data.description}</td>
                       </tr>
                     );
                   })
@@ -94,9 +95,9 @@ class DataTable extends Component {
         </table>
         <Pagination
           activePage={this.state.activePage}
-          itemsCountPerPage={10}
-          totalItemsCount={List.total_count}
-          pageRangeDisplayed={5}
+          itemsCountPerPage={List?.num_items_per_page}
+          totalItemsCount={List?.total_count}
+          pageRangeDisplayed={List?.num_items_per_page}
           onChange={this.handlePageChange.bind(this)}
         />
       </div>
